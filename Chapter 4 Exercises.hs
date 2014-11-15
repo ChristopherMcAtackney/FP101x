@@ -1,0 +1,1 @@
+let halve xs = (take n xs, drop n xs) where n = div (length xs) 2
