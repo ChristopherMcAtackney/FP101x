@@ -27,7 +27,7 @@ toDigitsRev = \x -> reverse (toDigits x)
 -- Ex. 2
 -- ===================================
 
-positions = \xs -> [(x,i)|(x,i) <- zip [0..] xs]
+positions = \xs -> [(x,i)|(x,i) <- zip [1..] xs]
 
 doubleSecond :: [Integer] -> [Integer]
 doubleSecond = \xs -> map(\(i,n)-> if i`mod`2==0 then n*2 else n) (positions xs)
@@ -45,7 +45,7 @@ sumDigits = \xs -> sum (concat ([toDigits x|x<-xs]))
 -- ===================================
 
 isValid :: Integer -> Bool
-isValid = \x -> sumDigits(doubleSecond(toDigitsRev x)) `mod` 90 == 0
+isValid = \x -> sumDigits(doubleSecond(toDigitsRev x)) `mod` 10 == 0
 
 -- 7258112826684610210 is the reversed and doubled form of 5256283618614517
 -- ===================================
